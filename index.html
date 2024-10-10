@@ -10,7 +10,20 @@
       rel="stylesheet"
     />
 </head>
+
 <body class="playfair-display-font">
+<!-- Date & Time script -->
+    <script>
+        // to update the date and time
+        function updateDateTime() {
+          const now = new Date();
+          const currentDateTime = now.toLocaleString();
+          document.querySelector('#datetime').textContent = currentDateTime;
+        }
+  
+        setInterval(updateDateTime, 1000);
+      </script>
+
     <header class="header-section">
         <h3>Service  for manual registration of visitors</h3>
     </header>
@@ -30,10 +43,92 @@
         </div>
         <div class="clock-wrap">
             <h3>Time & Date</h3>
+            <!-- DATE & TIME output dynamic -->
+            <p id="datetime"></p>
         </div>
     </main>
-    <section class="registration-form-wrap">Form for registration</section>
-    <section class="list-visitors-wrap">List of visitors</section>
-    <footer class="footer-section">Basic information and contacts for support</footer>
+    <section class="registration-form-wrap">
+        <h3>Form for registration</h3>
+        <form>
+            <label for="input-auto-id">Auto ID</label>
+                <input type="text" id="input-auto-id" name="input-auto-id"></br>
+                <label for="input-first-name">First name</label>
+                <input type="text" id="input-first-name" name="input-first-name"></br>
+                <label for="input-second-name">Second name</label>
+                <input type="text" id="input-second-name" name="input-second-name"></br>
+                <label for="input-email">Email</label>
+                <input type="email" id="input-email" name="input-email"></br>
+                <label for="input-phone">Phone</label>
+                <input type="phone" id="input-phone" name="input-phone"></br>
+                <button>CREATE</button>
+        </form>
+                
+
+    </section>
+    <section class="list-visitors-wrap">
+        <h3>List of visitors</h3>
+        <div class="total-output">
+            <span>Total:</span>
+            <span> 3 </span>
+            
+        </div>
+        <table>
+            <tr>
+              <th>ID</th>
+              <th>First name</th>
+              <th>Second name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Date & Time</th>
+              <th>Actions</th>
+            </tr>
+            <!-- First record -->
+            <tr>
+              <td>001</td>
+              <td>John</td>
+              <td>Doe</td>
+              <td>john.doe@example.com</td>
+              <td>123-456-7890</td>
+              <td>2024-09-25T12:34:56</td>
+              <td>
+                <button>UPDATE</button>
+                <button>DELETE</button>
+              </td>
+            </tr>
+
+            <!-- Second record -->
+            <tr>
+                <td>002</td>
+                <td>Jack</td>
+                <td>Doe</td>
+                <td>john.doe@example.com</td>
+                <td>123-456-7890</td>
+                <td>2024-09-25T12:34:56</td>
+                <td>
+                  <button>UPDATE</button>
+                  <button>DELETE</button>
+                </td>
+              </tr>
+            <!-- Third record -->
+            <tr>
+                <td>003</td>
+                <td>Jim</td>
+                <td>Doe</td>
+                <td>john.doe@example.com</td>
+                <td>123-456-7890</td>
+                <td>2024-09-25T12:34:56</td>
+                <td>
+                  <button>UPDATE</button>
+                  <button>DELETE</button>
+                </td>
+              </tr>
+             
+          </table>
+        </section>
+    <footer class="footer-section">
+        <h3>Basic information and contacts for support</h3>
+        <p>Support phone: 555-555-555-555</p>
+        <p>Technical team phone: 888-555-555-555</p>
+    </footer>
 </body>
 </html>
